@@ -1,7 +1,5 @@
-# This is a sample Python script.
-
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# test de différents algorithmes de tri et visualisation graphique
+# utilisation de classes, recursivité et multithread
 
 import time
 import random
