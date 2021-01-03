@@ -1,3 +1,4 @@
+# objet des différents blocs graphiques suivant le type d algo de tri
 
 from tkinter import *
 # from tkinter import ttk
