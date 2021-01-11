@@ -6,6 +6,10 @@ import random
 from tkinter import *
 from tkinter import ttk
 from class_bloc import *
+import logging
+
+# configuration logging
+logging.basicConfig(level=logging.DEBUG)
 
 # creation de la fenetre principale
 root = Tk()
@@ -33,6 +37,7 @@ def chgt():
         frameUL.grid_propagate(0)
         r = ((nb_frame) // 3)
         c = (nb_frame) % 3
+        logging.debug(f"creation de la classe bloc colonne {c} et rang {r}")
         if nb_frame == 0:
             frame_tri.append(bloc_celian([c, r], col[nb_frame], frameUL, root))
         elif nb_frame == 1:
