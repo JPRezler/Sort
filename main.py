@@ -7,9 +7,17 @@ from tkinter import *
 from tkinter import ttk
 from class_bloc import *
 import logging
+import os
 
-# configuration logging
-logging.basicConfig(level=logging.DEBUG)
+
+## configuration logging
+# cleaning message log file first
+file_name_log = 'message.log'
+if os.path.exists(file_name_log):
+    os.remove(file_name_log)
+# config of logging
+logging.basicConfig(filename=file_name_log, level=logging.DEBUG)
+
 
 # creation de la fenetre principale
 root = Tk()
