@@ -4,6 +4,7 @@ from tkinter import *
 # from tkinter import ttk
 from threading import Thread
 import time
+from function_decorators import timer
 
 col = ['black','brown','red','orange','yellow','green','blue','purple','grey','white']
 taille_frame = 370
@@ -78,6 +79,7 @@ class bloc(Thread):
         self.canva.move(arrivee + 1, -distance, 0)
         self.main_window.update()
 
+    @timer
     def tri(self):
         for j in range(self.nb_b-1):
             for i in range (self.nb_b-1-j):
@@ -118,6 +120,8 @@ class bloc_celian (bloc):
         bloc.new_rectangle(self,liste)
         self.canva.create_text((taille_frame-20) // 2, taille_frame - 20, text="Celian", fill='black')
         self.main_window.update()
+
+    @timer
     def tri(self):
         indice_min = 0
         for i in range(self.nb_b - 1):
@@ -136,6 +140,8 @@ class bloc_tuple (bloc):
         bloc.new_rectangle(self,liste)
         self.canva.create_text((taille_frame-20) // 2, taille_frame - 20, text="Tuple", fill='black')
         self.main_window.update()
+
+    @timer
     def tri(self):
         for j in range(self.nb_b-1):
             for i in range (self.nb_b-1-j):
@@ -151,6 +157,8 @@ class bloc_insertion (bloc):
         bloc.new_rectangle(self,liste)
         self.canva.create_text((taille_frame-20) // 2, taille_frame - 20, text="insertion", fill='black')
         self.main_window.update()
+
+    @timer
     def tri(self):
         indice_min = 0
         for i in range(self.nb_b):
@@ -219,7 +227,7 @@ class bloc_fusion (bloc):
         else:
             return
 
-
+    @timer
     def tri(self):
         self.tri_fusion(self.liste_a_trier,self.numero_rectangle)
         print("end")
