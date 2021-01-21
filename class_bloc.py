@@ -230,5 +230,4 @@ class bloc_fusion (bloc):
     @timer
     def tri(self):
         self.tri_fusion(self.liste_a_trier,self.numero_rectangle)
-        print("end")
         return

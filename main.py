@@ -6,18 +6,18 @@ import random
 from tkinter import *
 from tkinter import ttk
 from class_bloc import *
-import logging
+from logger import *
 import os
 
 
 ## configuration logging
 # cleaning message log file first
-file_name_log = 'message.log'
-if os.path.exists(file_name_log):
-    os.remove(file_name_log)
+file_name_log_main = 'message.log'
+if os.path.exists(file_name_log_main):
+    os.remove(file_name_log_main)
 # config of logging
-logging.basicConfig(filename=file_name_log, level=logging.DEBUG)
-
+setup_logger('log_main', file_name_log_main, logging.DEBUG)
+log_main = logging.getLogger('log_main')
 
 # creation de la fenetre principale
 root = Tk()
@@ -45,7 +45,7 @@ def chgt():
         frameUL.grid_propagate(0)
         r = ((nb_frame) // 3)
         c = (nb_frame) % 3
-        logging.debug(f"creation de la classe bloc colonne {c} et rang {r}")
+        log_main.debug(f"creation de la classe bloc colonne {c} et rang {r}")
         if nb_frame == 0:
             frame_tri.append(bloc_celian([c, r], col[nb_frame], frameUL, root))
         elif nb_frame == 1:
