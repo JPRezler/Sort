@@ -1,3 +1,5 @@
+# function to log information in a file
+
 import logging
 
 def setup_logger(logger_name, log_file, level=logging.INFO):
