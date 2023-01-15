@@ -7,6 +7,7 @@ from tkinter import *
 from tkinter import ttk
 from class_bloc import *
 from logger import *
+import sys
 import os
 
 
@@ -72,8 +73,8 @@ def chgt():
             frame_tri[nb_frame].tri_en_cours = True
 
 def fermeture():# faire une fermeture des threads
-    sys.exit()
     root.destroy()
+    sys.exit()
     return
 
 # button
